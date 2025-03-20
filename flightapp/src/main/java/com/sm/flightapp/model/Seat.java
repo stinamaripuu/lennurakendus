@@ -1,10 +1,7 @@
 package com.sm.flightapp.model;
 
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.Data;
 
 @Data
@@ -12,10 +9,13 @@ import lombok.Data;
 public class Seat {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Integer id;
-    private Boolean available;
-    private Boolean window;
-    private Boolean legRoom;
-    private Boolean exit;
+    private Boolean available = true;
+    private Boolean isWindow = false;
+    private Boolean legRoom = false;
+    private Boolean exit = false;
+    private Integer rowNumber;
+    private Integer seatNumber;
+    private Integer flightID;
 }
