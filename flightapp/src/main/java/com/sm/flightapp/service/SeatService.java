@@ -61,7 +61,7 @@ public class SeatService {
     }
 
     public ResponseEntity<List<Seat>> getSeatsForFlight(Integer flightId) {
-        List<Seat> seats = seatDao.findByFlightID(flightId);
+        List<Seat> seats = seatDao.findByFlightIDOrderByRowNumberAscSeatNumberAsc(flightId);
         return new ResponseEntity<>(seats, HttpStatus.OK);
     }
 

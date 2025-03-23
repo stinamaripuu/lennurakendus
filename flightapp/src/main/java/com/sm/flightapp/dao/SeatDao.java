@@ -8,4 +8,5 @@ import java.util.List;
 public interface SeatDao extends JpaRepository<Seat, Integer> {
 
     List<Seat> findByFlightID(Integer flightId);
+    List<Seat> findByFlightIDOrderByRowNumberAscSeatNumberAsc(Integer flightId);
 }
