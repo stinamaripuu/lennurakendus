@@ -68,6 +68,8 @@
       </tr>
       </tbody>
     </table>
+
+    <p>Vali omale sobiv lend ning näed allpool istmete plaani.</p>
   </div>
 </template>
 

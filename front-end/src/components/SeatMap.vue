@@ -1,7 +1,7 @@
 <template>
   <div>
     <h1>Istmete plaan</h1>
-
+    <p>Vali siit endale sobivad filtrid ning vajuta nuppu "Soovita mulle kohti".</p>
     <div class="preferences">
       <label><input type="checkbox" v-model="preferences.window" /> Tahan istekohta akna alla </label>
       <label><input type="checkbox" v-model="preferences.legRoom" /> Tahan rohkem jalaruumi </label>
@@ -29,11 +29,11 @@
         Tahan ise plaani pealt kohti valida
       </label>
 
-      <button v-if="!manualSelection" @click="applySeatRecommendation">
+      <button v-if="!manualSelection" class="suggest-button" @click="applySeatRecommendation">
         Soovita mulle kohti
       </button>
 
-      <button v-if="selectedSeats.length > 0" @click="clearSelection">
+      <button v-if="selectedSeats.length > 0" class="cancel-button" @click="clearSelection">
         Tühista kohasoovitused
       </button>
     </div>
@@ -59,7 +59,7 @@
     </div>
 
     <br />
-    <button :disabled="selectedSeats.length === 0" @click="bookSelected">
+    <button :disabled="selectedSeats.length === 0" class="book-button" @click="bookSelected">
       Broneeri valitud kohad
     </button>
   </div>
@@ -82,6 +82,7 @@ const props = defineProps({
     required: true
   }
 })
+
 
 const seats = ref([])
 const selectedSeats = ref([])
@@ -275,6 +276,30 @@ button {
   color: white;
   font-weight: bold;
   cursor: pointer;
+}
+
+.suggest-button {
+  background-color: #f1c40f; /* Yellow */
+}
+
+.suggest-button:hover:not(:disabled) {
+  background-color: #d4ac0d;
+}
+
+.cancel-button {
+  background-color: #e74c3c; /* Red */
+}
+
+.cancel-button:hover:not(:disabled) {
+  background-color: #c0392b;
+}
+
+.book-button {
+  background-color: #2ecc71; /* Green */
+}
+
+.book-button:hover:not(:disabled) {
+  background-color: #27ae60;
 }
 
 .available {
