@@ -1,5 +1,17 @@
 # lennurakendus
 
+## Rakenduse käivitamine
+* Clone'i omale käesolev GitHubi repo
+* ava kaust terminalis / mõnes muus käsurea rakenduses
+* navigeeri back-endi kausta, milleks on flightapp  - cd flightapp
+* jooksuta koodi nii - ./mvnw spring-boot:run
+* kui vaja, lae alla vajaminevad maven või muud dependencyd
+* rakenduse backend avaneb aadressil [localhost:8080 ](http://localhost:8080/)
+* ava nüüd uus terminali aken ning navigeeri clone'itud repo kausta ning navigeeri front-end kausta - cd front-end
+* lae alla vajalikud dependencyd - npm install
+* ning jooksuta frontend - npm run dev
+* rakenduse frontend avaneb aadressil [localhost:5173 ](http://localhost:5173/)
+
 ### Lahenduse käik:
 Rakendus on loodud Spring-Boot backendi ning Vue.js front-endiga.
 Kogu protsessi jaotasin mitmeks osaks, seda näitavad ka git-i logid.
