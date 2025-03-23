@@ -11,6 +11,7 @@
 * lae alla vajalikud dependencyd - npm install
 * ning jooksuta frontend - npm run dev
 * rakenduse frontend avaneb aadressil [localhost:5173 ](http://localhost:5173/)
+* kui oled rakenduse tööle saanud, saad lisada rakenduse esilehel vajutades nupule "Lisa lende" endale sobivad lennud ning testida rakendust!
 
 ### Lahenduse käik:
 Rakendus on loodud Spring-Boot backendi ning Vue.js front-endiga.
