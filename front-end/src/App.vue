@@ -1,12 +1,13 @@
 <template>
+  <NavbarElem/>
   <NotificationPopup />
-  <h1>Lennurakendus</h1>
   <router-view />
 </template>
 
 <script setup>
 import { ref, provide } from 'vue'
 import NotificationPopup from './components/NotificationPopup.vue'
+import NavbarElem from "@/components/NavbarElem.vue";
 
 const notificationMessage = ref('')
 const notificationVisible = ref(false)

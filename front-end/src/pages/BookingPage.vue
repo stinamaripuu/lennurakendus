@@ -1,7 +1,10 @@
 <template>
   <div>
     <FlightList @select-flight="selectFlight" />
-    <SeatMap v-if="selectedFlight" :flightId="selectedFlight.id" />
+    <SeatMap v-if="selectedFlight"
+             :flightId="selectedFlight.id"
+             :flightPrice="selectedFlight.price"
+    />
   </div>
 </template>
 
