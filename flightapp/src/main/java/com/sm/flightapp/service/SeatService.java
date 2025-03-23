@@ -12,13 +12,23 @@ import java.util.List;
 import java.util.Optional;
 import java.util.Random;
 
+/**
+ * Service for generating, getting and saving (selecting) seats
+ */
+
 @Service
 public class SeatService {
 
     @Autowired
     SeatDao seatDao;
 
-
+    /**
+     *Generates seats, can choose how many seats, how many seats in row and
+     * is customizable. Puts a seeat together with an id for flight and a seat id
+     * so it is easier to save in the end. also initializes legroom, exit row, occupied, rows and seats.
+     * @param flightId
+     * @return
+     */
     public List<Seat> generateSeats(Integer flightId) {
         List<Seat> seats = new ArrayList<>();
 
@@ -65,6 +75,11 @@ public class SeatService {
         return new ResponseEntity<>(seats, HttpStatus.OK);
     }
 
+    /**
+     * method for saving (selecting) seats and saving them as occupied if it is available
+     * @param seatId
+     * @return
+     */
     public ResponseEntity<String> selectSeat(Integer seatId) {
         Optional<Seat> optionalSeat = seatDao.findById(seatId);
         if (optionalSeat.isEmpty()) {

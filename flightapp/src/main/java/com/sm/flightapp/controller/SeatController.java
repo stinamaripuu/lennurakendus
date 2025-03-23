@@ -8,6 +8,10 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+/**
+ * controller for getting all seats connected to a flight
+ * or saving (selecting) a modified seat in a flight
+ */
 @RestController
 @RequestMapping("/seats")
 public class SeatController {

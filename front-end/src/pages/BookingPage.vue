@@ -1,4 +1,6 @@
 <template>
+  <!-- overall booking page and how flight list and seat map are displayed  in what order -->
+
   <div>
     <FlightList @select-flight="selectFlight" />
     <SeatMap v-if="selectedFlight"

@@ -1,4 +1,6 @@
 <template>
+  <!-- Added for giving feedback about successful / unsuccessful actions in the application -->
+
   <div v-if="visible" class="toast">
     {{ message }}
   </div>

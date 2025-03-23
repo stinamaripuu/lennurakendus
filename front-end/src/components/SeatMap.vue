@@ -1,4 +1,6 @@
 <template>
+  <!-- Filters for seat selection -->
+
   <div>
     <h1>Istmete plaan</h1>
     <p>Vali siit endale sobivad filtrid ning vajuta nuppu "Soovita mulle kohti".</p>
@@ -37,6 +39,7 @@
         Tühista kohasoovitused
       </button>
     </div>
+    <!-- Seat display in grid -->
 
     <div class="seat-grid">
       <button
@@ -57,6 +60,7 @@
         {{ seat.rowNumber }}{{ seat.seatNumber }}
       </button>
     </div>
+    <!-- Booking selected seats -->
 
     <br />
     <button :disabled="selectedSeats.length === 0" class="book-button" @click="bookSelected">
@@ -112,6 +116,10 @@ const fetchSeats = async () => {
 
 watch(() => props.flightId, fetchSeats, { immediate: true })
 
+/**
+ * Algorithm for finding best seating arrangement that fits the desired criteria that comes from checkboxes
+ * ChatGPT generated
+ */
 const applySeatRecommendation = () => {
   const available = seats.value.filter(s => s.available)
   const requiredCount = seatCount.value

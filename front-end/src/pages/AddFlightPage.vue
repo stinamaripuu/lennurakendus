@@ -1,7 +1,8 @@
 <template>
+  <!-- Form for structured insertion of data -->
+
   <div class="form-container">
     <h1>Lisa uus lend</h1>
-
     <form @submit.prevent="submitFlight">
       <label>
         Lähtekoht:

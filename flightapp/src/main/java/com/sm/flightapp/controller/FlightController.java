@@ -11,9 +11,14 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
+/**
+ * controller for adding and getting all flights
+ */
+
 @RestController
 @RequestMapping("flights")
 public class FlightController {
+
 
     @Autowired
     FlightService flightService;

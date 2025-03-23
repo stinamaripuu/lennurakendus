@@ -13,6 +13,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
+/**
+ * Service for getting and adding flights
+ */
 @Service
 public class FlightService {
 
@@ -26,6 +29,12 @@ public class FlightService {
         return new ResponseEntity<>(flightDao.findAll(), HttpStatus.OK);
     }
 
+    /**
+     * Adds flights, and also creates list of all seats, some of whic
+     * are occupied by random.
+     * @param flight
+     * @return
+     */
     public ResponseEntity<Flight> addFlight(Flight flight) {
         Flight newFlight = flightDao.save(flight);
         List<Seat> seats = (List<Seat>) seatService.generateSeats(newFlight.getId());

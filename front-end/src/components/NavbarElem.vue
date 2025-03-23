@@ -1,4 +1,6 @@
 <template>
+  <!-- Added to make navigation in app much easier -->
+
   <nav class="navbar">
     <router-link to="/" class="nav-button">Algusesse</router-link>
   </nav>

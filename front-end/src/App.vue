@@ -12,6 +12,10 @@ import NavbarElem from "@/components/NavbarElem.vue";
 const notificationMessage = ref('')
 const notificationVisible = ref(false)
 
+/**
+ * For displaying notifications on whatever page you are on.
+ * @param msg
+ */
 const showNotification = (msg) => {
   notificationMessage.value = msg
   notificationVisible.value = true

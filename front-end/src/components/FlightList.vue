@@ -1,6 +1,8 @@
+
 <template>
   <div class="flight-table-container">
     <h1>Saadavalolevad lennud</h1>
+    <!-- Filters for flight sorting -->
 
     <p>Vali endale meelepärane lennuaeg: </p>
     <div class="filters">
@@ -45,6 +47,7 @@
         <input type="number" v-model.number="filters.maxPrice" />
       </label>
     </div>
+    <!-- Creating a table for the flights, which is updated any time filters are changed -->
 
     <table>
       <thead>
